@@ -1,23 +1,31 @@
-function draw(){
-  var canvas = document.getElementById('tutorial');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
+// function draw(){
+//   var canvas = document.getElementById('tutorial');
+//   if (canvas.getContext){
+//     var ctx = canvas.getContext('2d');
+//   }
+// }
 
-    ctx.fillRect(30, 5, 1, 30);
+// draw();
 
-    ctx.beginPath();
+var canvas = document.getElementById('tutorial');
 
-    // 2 pixel line
-    ctx.moveTo(50, 50);
-    ctx.lineTo(50, 100);
+var ctx = document.getElementById('tutorial').getContext('2d');
+var offset = 0;
 
-    // single pixel line
-    ctx.moveTo(100.5, 50);
-    ctx.lineTo(100.5, 100);
-
-    ctx.stroke();
-
-  }
+function draw() {
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+  ctx.setLineDash([4, 2]);
+  ctx.lineDashOffset = -offset;
+  ctx.strokeRect(10,10, 100, 100);
 }
 
-draw();
+function march() {
+  offset++;
+  if (offset > 16) {
+    offset = 0;
+  }
+  draw();
+  setTimeout(march, 20);
+}
+
+march();
