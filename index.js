@@ -17,7 +17,7 @@ function get_num_squares(start_width, indent) {
   var width = start_width;
 
   var num_squares = 0;
-  while (angle < Math.PI / 12) {
+  while (angle < Math.PI / 100) {
     num_squares++;
     angle = get_next_angle(width, indent);
     width = get_next_width(width, indent);
@@ -34,11 +34,11 @@ function get_random_int(min, max) {
 
 // var INDENT = 20;
 
-var MAX_WIDTH = 600;
+var MAX_WIDTH = 1000;
 var MIN_WIDTH = 30;
 
-var MIN_INDENT = 1;
-var MAX_INDENT = 20;
+var MIN_INDENT = 4;
+var MAX_INDENT = 50;
 var INDENT = get_random_int(MIN_INDENT, MAX_INDENT);
 var INITIAL_WIDTH = MAX_WIDTH; //get_random_int(MIN_WIDTH, MAX_WIDTH);
 var NUM_SQUARES = 12;
@@ -48,7 +48,7 @@ var num_squares = get_num_squares(INITIAL_WIDTH, INDENT);
 // colour gradient
 var color_scale = d3.scale.linear()
       .domain([0, num_squares - 1])
-      .range(["blue", "yellow"]);
+      .range(["red", "yellow"]);
 
 function draw() {
   var ctx = document.getElementById('canvas').getContext('2d');
