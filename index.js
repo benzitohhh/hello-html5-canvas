@@ -53,12 +53,12 @@ function draw() {
   var width = INITIAL_WIDTH;
   var angle = 0;
 
-  // fill first rect
-  ctx.fillStyle = color_scale(0);
-
-  ctx.fillRect(0, 0, INITIAL_WIDTH, INITIAL_WIDTH);
-
   for(var i = 0; i < num_squares; i++) {
+    // fill/stroke
+    ctx.strokeRect(0, 0, width, width);
+    ctx.fillStyle = color_scale(i);
+    ctx.fillRect(0, 0, width, width);
+
     // Get next values
     angle = get_next_angle(width, INDENT);
     width = get_next_width(width, INDENT);
@@ -66,12 +66,6 @@ function draw() {
     // translate to rotation centre and stroke
     ctx.translate(INDENT, 0);
     ctx.rotate(angle);
-
-    // draw
-    ctx.strokeRect(0, 0, width, width);
-
-    ctx.fillStyle = color_scale(i);
-    ctx.fillRect(0, 0, width, width);
   }
 
 
