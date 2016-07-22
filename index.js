@@ -17,7 +17,7 @@ function get_num_squares(start_width, end_width, indent) {
   var width = start_width;
 
   var num_squares = 0;
-  while (width >= end_width && num_squares <= MAX_SQUARES) {
+  while (width >= end_width) {
     num_squares++;
     angle = get_next_angle(width, indent);
     width = get_next_width(width, indent);
@@ -30,8 +30,6 @@ function get_random_int(min, max) {
   return min + Math.floor(Math.random() * (max - min));
 }
 
-var MAX_SQUARES = 200;
-
 var MAX_WIDTH = 1000;
 var MIN_WIDTH = 30;
 
@@ -39,7 +37,7 @@ var MIN_INDENT = 3;
 var MAX_INDENT = 60;
 
 var INDENT = get_random_int(MIN_INDENT, MAX_INDENT);
-var INITIAL_WIDTH =  get_random_int(MIN_WIDTH, MAX_WIDTH); // MAX_WIDTH;
+var INITIAL_WIDTH = MAX_WIDTH; //get_random_int(MIN_WIDTH, MAX_WIDTH);
 var END_WIDTH = get_random_int(MIN_WIDTH, INITIAL_WIDTH);
 
 var num_squares = get_num_squares(INITIAL_WIDTH, END_WIDTH, INDENT);
