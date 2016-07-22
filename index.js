@@ -1,3 +1,6 @@
+// See https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing
+// And also https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing/Example
+
 var canvas1 = document.createElement("canvas");
 var canvas2 = document.createElement("canvas");
 var gco = [ 'source-over','source-in','source-out','source-atop',
