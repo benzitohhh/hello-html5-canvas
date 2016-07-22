@@ -13,7 +13,7 @@ var MAX_INDENT = 60;
 
 var STEP_TIME = 100;
 
-var FULL_STEP_TIME = 1000;
+var FULL_STEP_TIME = 1500;
 
 var BIG_STEP_TIME = 600;
 
