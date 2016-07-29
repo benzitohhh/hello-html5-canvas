@@ -1,3 +1,5 @@
+// See https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations
+
 var sun = new Image();
 var moon = new Image();
 var earth = new Image();
