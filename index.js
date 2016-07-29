@@ -24,7 +24,10 @@ function draw() {
   ctx.rotate( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds() ); // rev-time 60s
   ctx.translate(105,0);
   ctx.fillRect(0,-12,50,24); // Shadow
+  ctx.save();
+  ctx.rotate( ((2*Math.PI)/(60/365))*time.getSeconds() + ((2*Math.PI)/(60000/365))*time.getMilliseconds() ); // rev-time 60s
   ctx.drawImage(earth,-12,-12);
+  ctx.restore();
 
   // Moon
   ctx.save();
